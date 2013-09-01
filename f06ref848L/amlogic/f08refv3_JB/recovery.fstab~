@@ -1,0 +1,10 @@
+# mount point	fstype		device			device2
+/logo		mtd		logo
+/aml_logo	mtd		aml_logo
+/recovery	mtd		recovery
+/boot		mtd		boot
+/system		ext4		system
+/cache		ext4		cache
+/data		  ext4		userdata
+/sdcard		vfat		/dev/block/cardblksd#
+/media		vfat		/dev/block/avnftl8p1

@@ -1,0 +1,67 @@
+LOCAL_PATH:=$(call my-dir)
+
+ifeq ($(strip $(WIFI_DRIVER)),ar6003)
+file := $(TARGET_OUT)/etc/wifi/wpa_supplicant.conf
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/wpa_supplicant.conf | $(ACP)
+	$(transform-prebuilt-to-target)
+	
+file := $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.1.1/otp.bin
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/otp.bin | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.1.1/device.bin
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/device.bin | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.1.1/data.patch.hw3_0.bin
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/data.patch.hw3_0.bin | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.1.1/athwlan.bin
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/athwlan.bin | $(ACP)
+	$(transform-prebuilt-to-target)
+	
+file := $(TARGET_OUT)/wifi/ar6000.ko
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/ar6000.ko | $(ACP)
+	$(transform-prebuilt-to-target)
+	
+file := $(TARGET_OUT)/wifi/A31_Generic_20110128.bin
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/A31_Generic_20110128.bin | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.1.1/athwlan_tablet.bin
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/athwlan_tablet.bin | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.1.1/athwlan_router.bin
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/athwlan_router.bin | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.1.1/athwlan_mobile.bin
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/athwlan_mobile.bin | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/wifi/ath6k/AR6003/hw2.1.1/athtcmd_ram.bin
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/athtcmd_ram.bin | $(ACP)
+	$(transform-prebuilt-to-target)	
+	
+endif
+
+
+ifeq ($(strip $(WIFI_DRIVER)),ar6003_internal)
+file := $(TARGET_OUT)/etc/wifi/wpa_supplicant.conf
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/wpa_supplicant.conf | $(ACP)
+	$(transform-prebuilt-to-target)
+endif

@@ -1,0 +1,48 @@
+LOCAL_PATH:=$(call my-dir)
+
+ifeq ($(strip $(WIFI_DRIVER)),ar6003)
+file := $(TARGET_OUT)/bin/abtfilt
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/abtfilt | $(ACP)
+	$(transform-prebuilt-to-target)
+	
+file := $(TARGET_OUT)/bin/artagent
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/artagent | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/bin/athtestcmd
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/athtestcmd | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/bin/bccmd
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/bccmd | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/bin/drvdebugctrl
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/drvdebugctrl | $(ACP)
+	$(transform-prebuilt-to-target)
+	
+file := $(TARGET_OUT)/bin/iwconfig
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/iwconfig | $(ACP)
+	$(transform-prebuilt-to-target)
+	
+file := $(TARGET_OUT)/bin/iwlist
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/iwlist | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/bin/wlan_tool
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/wlan_tool | $(ACP)
+	$(transform-prebuilt-to-target)	
+
+file := $(TARGET_OUT)/bin/wmiconfig
+ALL_PREBUILT += $(file)
+$(file) : $(LOCAL_PATH)/wmiconfig | $(ACP)
+	$(transform-prebuilt-to-target)		
+endif
